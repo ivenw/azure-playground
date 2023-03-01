@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "dp203sa"
+		},
+		"dp203sa-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:dp203sa.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"linkedService1_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=dp203sa-ondemand.sql.azuresynapse.net;Initial Catalog=demo"
+		},
+		"public_holiday_sasUri": {
+			"value": ""
+		},
+		"dp203sa-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://dp203a34246.dfs.core.windows.net"
+		},
+		"sample-diabetes_sasUri": {
+			"value": ""
+		}
+	}
+}
