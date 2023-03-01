@@ -2,7 +2,7 @@
 	"name": "createViewPublicHolidays",
 	"properties": {
 		"content": {
-			"query": "USE demo\nGO\n\nCREATE OR ALTER PROCEDURE ServerlessView\nAS\n-- BEGIN\n\n-- DECLARE @statement VARCHAR(MAX)\n-- set @statement = N'\n-- CREATE OR ALTER VIEW public_holidays\n-- AS\n-- SELECT *\n-- FROM\n--     OPENROWSET(\n--         BULK     ''https://azureopendatastorage.blob.core.windows.net/holidaydatacontainer/Processed/*.parquet'',\n--         FORMAT = ''parquet''\n--     ) AS [result]\n-- '\n\nSELECT TOP 10 *\nFROM\n    OPENROWSET(\n        BULK     'https://azureopendatastorage.blob.core.windows.net/holidaydatacontainer/Processed/*.parquet',\n        FORMAT = 'parquet'\n    ) AS [result]\n\n\n\n-- EXEC (@statement)\n\n-- END\n-- GO\n",
+			"query": "USE demo\nGO\n\nCREATE OR ALTER PROCEDURE ServerlessView @name NVARCHAR(10)\nAS\nBEGIN\n\nDECLARE @statement VARCHAR(MAX)\nset @statement = N'CREATE OR ALTER VIEW ' + @name + ' AS\n    SELECT *\n    FROM\n        OPENROWSET(\n            BULK ''https://azureopendatastorage.blob.core.windows.net/holidaydatacontainer/Processed/*.parquet'',\n            FORMAT=''parquet''\n        ) AS [result]\n'\n\nEXEC (@statement)\n\nEND\nGO\n",
 			"metadata": {
 				"language": "sql"
 			},

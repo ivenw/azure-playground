@@ -15,7 +15,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[ServerlessView]"
+					"storedProcedureName": "[dbo].[ServerlessView]",
+					"storedProcedureParameters": {
+						"name": {
+							"value": "test2"
+						}
+					}
 				},
 				"linkedServiceName": {
 					"referenceName": "linkedService1",

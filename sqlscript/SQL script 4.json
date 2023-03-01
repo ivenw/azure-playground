@@ -2,7 +2,7 @@
 	"name": "SQL script 4",
 	"properties": {
 		"content": {
-			"query": "USE demo\nGO\n\nexec dbo.ServerlessView;\n",
+			"query": "USE demo\nGO\n\nexec dbo.ServerlessView test;\n",
 			"metadata": {
 				"language": "sql"
 			},
