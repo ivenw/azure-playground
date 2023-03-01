@@ -1,0 +1,17 @@
+{
+	"name": "createViewPublicHolidays",
+	"properties": {
+		"content": {
+			"query": "USE demo\nGO\n\nCREATE OR ALTER PROCEDURE ServerlessView\nAS\n-- BEGIN\n\n-- DECLARE @statement VARCHAR(MAX)\n-- set @statement = N'\n-- CREATE OR ALTER VIEW public_holidays\n-- AS\n-- SELECT *\n-- FROM\n--     OPENROWSET(\n--         BULK     ''https://azureopendatastorage.blob.core.windows.net/holidaydatacontainer/Processed/*.parquet'',\n--         FORMAT = ''parquet''\n--     ) AS [result]\n-- '\n\nSELECT TOP 10 *\nFROM\n    OPENROWSET(\n        BULK     'https://azureopendatastorage.blob.core.windows.net/holidaydatacontainer/Processed/*.parquet',\n        FORMAT = 'parquet'\n    ) AS [result]\n\n\n\n-- EXEC (@statement)\n\n-- END\n-- GO\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "demo",
+				"poolName": "Built-in"
+			},
+			"resultLimit": -1
+		},
+		"type": "SqlQuery"
+	}
+}
