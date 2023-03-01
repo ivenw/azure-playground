@@ -1,0 +1,17 @@
+{
+	"name": "test",
+	"properties": {
+		"content": {
+			"query": "CREATE PROCEDURE test_procedure \nAS SELECT AGE, SEX\nINTO test_table\nFROM sample_diabetes;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "test",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
