@@ -1,13 +1,13 @@
 {
-	"name": "test",
+	"name": "listStoredProcedures",
 	"properties": {
 		"content": {
-			"query": "CREATE PROCEDURE test_procedure \nAS SELECT AGE, SEX\nINTO test_table\nFROM sample_diabetes;",
+			"query": "SELECT \n  ROUTINE_SCHEMA,\n  ROUTINE_NAME\nFROM INFORMATION_SCHEMA.ROUTINES\nWHERE ROUTINE_TYPE = 'PROCEDURE';",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "test",
+				"databaseName": "demo",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000

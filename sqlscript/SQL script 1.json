@@ -2,12 +2,12 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "CREATE PROCEDURE test_procedure \nAS SELECT AGE, SEX\nINTO test_table\nFROM sample_diabetes;",
+			"query": "create or alter view holidays_paid_time_off\nas\nselect countryOrRegion, sum(cast(isPaidTimeOff as int)) as daysPaidTimeOff\nfrom public_holidays\nGROUP by countryOrRegion\n\nselect *\nfrom holidays_paid_time_off\n\nselect *\nfrom public_holidays\n\ncreate schema [raw];",
 			"metadata": {
 				"language": "sql"
 			},
 			"currentConnection": {
-				"databaseName": "test",
+				"databaseName": "demo",
 				"poolName": "Built-in"
 			},
 			"resultLimit": 5000
